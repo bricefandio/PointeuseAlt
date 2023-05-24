@@ -1,0 +1,40 @@
+﻿@using System.Data
+@using System.Linq
+@using WebApplication1.Models;
+
+
+
+    @{
+        var ListeEleve = ViewData["Eleves"] as List<Eleve>;
+    }
+    
+
+   
+        <table class="table">
+            <thead>
+                <tr>
+                       <th> @Html.DisplayName("Nom")</th>
+                       <th>@Html.DisplayName("Prenom")</th>
+                      <th>@Html.DisplayName("Promotion")</th>
+                       <th>@Html.DisplayName("Groupe")</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Eleve row in ListeEleve)
+                {
+                  <tr>
+                    <td>@row.Nom</td>
+                    <td>@row.Prenom</td>
+                    <td>@row.Promotion.Annee</td>
+                    <td>@row.Groupe.Nom</td>
+
+
+                  </tr>
+                }
+            </tbody>
+        </table>
+    
+   
